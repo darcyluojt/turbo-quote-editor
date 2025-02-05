@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="header">
+      <h1>Quotes</h1>
+      <%= link_to 'New Quote', new_quote_path, data: { turbo_frame: dom_id(Quote.new) }  %>
+    </div>
+    <%= turbo_frame_tag Quote.new %> <!-- This is the turbo_frame_tag that will be replaced -->
+  <%= turbo_frame_tag "quotes" do %>
+  <%= render @quotes %>
+  <% end %>
+</div>
